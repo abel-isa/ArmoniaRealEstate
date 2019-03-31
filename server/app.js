@@ -3,15 +3,21 @@ require('dotenv').config();
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
-const favicon      = require('serve-favicon');
-const hbs          = require('hbs');
+
+
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
+const cors = require("cors")
+
+
+const passport = require('passport');
+require('./configs/passport')
+
 
 mongoose
-  .connect('mongodb://localhost/server', {useNewUrlParser: true})
+  .connect(process.env.DB, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -24,25 +30,38 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
+
+app.use(passport.initialize());
+app.use(passport.session())
+
+
+
+// configuración CORS
+const whiteList = ["http://localhost:5000"]
+const corsOptions = {
+  origin: (origin, cb) => {
+    const originIsWhitelisted = whiteList.includes(origin);
+    cb(null, originIsWhitelisted)
+  },
+  credentials: true
+}
+app.use(cors(corsOptions))
+
+
+
+
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Express View engine setup
 
-app.use(require('node-sass-middleware')({
-  src:  path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  sourceMap: true
-}));
       
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
+
 
 
 
@@ -50,9 +69,16 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.locals.title = 'Express - Generated with IronGenerator';
 
 
+//rutas
 
-const index = require('./routes/index');
-app.use('/', index);
+const adminRoutes = require('./routes/admin-routes');
+app.use('/api', adminRoutes)
+
+const auth = require('./routes/auth')
+app.use('/api/admin/auth', auth)
+
+const fileUploadRoute = require('./routes/file-upload-routes')
+app.use('/api/admin/noticia', fileUploadRoute)
 
 
 module.exports = app;
