@@ -3,7 +3,7 @@ require('dotenv').config();
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
-
+const nodemailer = require('nodemailer');
 
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
@@ -70,6 +70,11 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 //rutas
+const sendMail = require('./routes/sendMail')
+app.use('/api', sendMail)
+
+const home = require('./routes/home')
+app.use('/api', home)
 
 const adminRoutes = require('./routes/admin-routes');
 app.use('/api', adminRoutes)

@@ -9,24 +9,26 @@ const Piso = require('../models/Piso')
 // })
 
 router.post('/introducirPiso',(req, res) => {
-    const {title,description,gallery,price,rooms,surface,terrace,heating,bathrooms,houseSize,parking,build,type,location} = req.body
-    Piso.save({title,description,gallery,price,rooms,surface,terrace,heating,bathrooms,houseSize,parking,build,type,location})
-    .then(()=>{
-        res.json()
+    const piso = {title,description,gallery,price,rooms,surface,terrace,heating,bathrooms,houseSize,parking,build,type,location} = req.body
+    //midelware cloudinary. para lasm fotos req.file
+    const imgURL = req.file.secureURL
+    const newPiso = new Piso(piso)
+    newPiso.save()
+    .then((piso)=>{
+        res.json({msg:'El piso se ha introducido', piso})
     })
    
 })
 
 router.post('/introducirNoticia',(req, res) => {
     const {img,title,description,} = req.body
+    //idem fotos
     Noticia.save({img,title,description,})
     .then(()=>{
         res.json()
     })
    
 })
-
-
 
 
 
