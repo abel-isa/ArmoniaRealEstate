@@ -1,3 +1,27 @@
 footer {
     background-color: greenyellow;
+    text-align: center;
+
+}
+
+.footer-cols img {
+    width: 40px;
+    margin: 15px;
+}
+
+.footer-row {
+    text-align: center;
+}
+
+.p-copyright {
+    margin-bottom: 0;
+}
+
+.footer-section-3 img{
+    width: 60px;
+    margin: 15px;
+}
+
+.footer-cols-text {
+    border-left: 2px solid
 }

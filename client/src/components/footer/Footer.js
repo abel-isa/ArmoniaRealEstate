@@ -23,11 +23,11 @@ class Footer extends Component {
 
             <footer>
 
-                <section>
+                <section className='container footer-section-1'>
 
-                    <article>
+                    <article className='row footer-row'>
 
-                        <div>
+                        <div className='col-lg-4 footer-cols'>
 
                             <div>
                                 <figure>
@@ -43,11 +43,11 @@ class Footer extends Component {
 
                         </div>
 
-                        <div>
+                        <div className='col-lg-4 footer-cols'>
 
                             <div>
                                 <figure>
-                                    <img src={phoneIcon} alt="Phone Icon" />
+                                    <img className='footer-section-1-img' src={phoneIcon} alt="Phone Icon" />
                                 </figure>
                             </div>
 
@@ -59,11 +59,11 @@ class Footer extends Component {
 
                         </div>
 
-                        <div>
+                        <div className='col-lg-4 footer-cols'>
 
                             <div>
                                 <figure>
-                                    <img src={phoneIcon} alt="Phone Icon" />
+                                    <img className='footer-section-1-img' src={phoneIcon} alt="Phone Icon" />
                                 </figure>
                             </div>
 
@@ -79,26 +79,25 @@ class Footer extends Component {
 
 
 
-                    <article>
+                </section>
 
-                        <h3>Suscríbete</h3>
-                        <p>Recibe todas las novedades del sector inmobiliario con nosotros.</p>
+                <section className='container footer-section-2'>
 
-                    </article>
-
-                    <article>
-
-                        <figure>
-                            <img src={phoneIcon} alt="Phone Icon" />
-                        </figure>
-
-                    </article>
+                    <h3>Suscríbete</h3>
 
                 </section>
 
-                <section>
+                <section className='container footer-section-3'>
 
-                    <p>© 2019 Copyright: ARMONÍA Real Estate</p>
+                    <figure>
+                        <img src={phoneIcon} alt="Phone Icon" />
+                    </figure>
+
+                </section>
+
+                <section className='container footer-section-4'>
+
+                    <p className='p-copyright'>© 2019 Copyright: ARMONÍA Real Estate</p>
 
                 </section>
 

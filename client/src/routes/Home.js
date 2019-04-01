@@ -6,10 +6,10 @@ import Backdrop from "../components/backdrop/Backdrop"
 import Divider from "../components/divider/Divider"
 import Welcome from '../components/home/welcome/Welcome'
 // import HelpForm from '../components/home/helpForm/HelpForm'
-import HelpForm2 from '../components/helpForm2/HelpForm2'
+// import HelpForm2 from '../components/helpForm2/HelpForm2'
 // import Method from '../components/home/method/Method'
 // import Advice from '../components/home/advice/Advice'
-// import Footer from '../components/footer/Footer'
+import Footer from '../components/footer/Footer'
 
 
 
@@ -47,13 +47,13 @@ class Home extends Component {
 
         <Welcome/>
 
-        <HelpForm2/>
+        {/* <HelpForm2/> */}
 
         {/* <Method/> */}
 
         {/* <Advice/> */}
 
-        {/* <Footer/> */}
+        <Footer/>
 
       </div>
 
