@@ -14,18 +14,23 @@ import SeeFlats from '../services/seeFlats'
 import Footer from '../components/footer/Footer'
 
 
+import seeFlats from '../services/seeFlats'
+import AddFlat from '../component1/AddFlat';
+
+
 
 class Home extends Component {
-
-  constructor (props){
+  constructor(props){
     super(props)
-    this.state = {
+    this.state={
       sideDrawerOpen: false,
-      pisos: []
+      pisos : []
     }
-    this.prueba = new SeeFlats()
+    this.prueba = new seeFlats()
     this.prueba.getFlat()
+    .then(data => this.setState({...this.state, pisos:data}))
   }
+  
 
 
   drawerToggleClickHandler = () => {
@@ -35,21 +40,14 @@ class Home extends Component {
   }
 
   backdropClickHandler = () => {
-    this.setState({...this.state, sideDrawerOpen: false})
+    this.setState({...this.state,sideDrawerOpen: false})
   }
 
-  componentWillMount(){
   
-    console.log('Entro aqui')
-    this.prueba.getFlat()
-    .then(data=>{
-      console.log(data);
-      this.setState({
-        ...this.state,
-        pisos: data
-      })
-    })
-  }
+
+
+
+
 
   render() {
 
@@ -61,21 +59,20 @@ class Home extends Component {
     if (this.state.sideDrawerOpen) {
       backdrop = <Backdrop click={this.backdropClickHandler}/>
     }
-
+    console.log(this.state)
     return (
 
       <div style={{height: '100%'}}>
 
-        <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
+        {/* <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
         <SideDrawer show={this.state.sideDrawerOpen}/>
-        {backdrop}
+        {backdrop} */}
 
         <Divider/>
 
         <Welcome/>
 
-        {this.state.pisos.map((piso, index) => <FlatCard key={index} flat={piso}/>)}
-
+        {this.state.pisos.map((piso,index) => <FlatCard key={index} flat={piso}/>)}
 
         {/* <HelpForm2/> */}
 
@@ -83,7 +80,11 @@ class Home extends Component {
 
         {/* <Advice/> */}
 
+        <AddFlat/>
+
         <Footer/>
+
+
 
       </div>
 

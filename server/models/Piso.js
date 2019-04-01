@@ -15,6 +15,9 @@ const pisoSchema = new Schema({
   parking: String,
   build: String,
   type: String,
+  reference:String,
+  state:String,
+  floor:String,
   location: { type: { type: String }, coordinates: [Number] }
 }, {
     timestamps: true
