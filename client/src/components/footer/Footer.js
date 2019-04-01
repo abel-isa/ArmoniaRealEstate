@@ -35,7 +35,7 @@ class Footer extends Component {
                                 </figure>
                             </div>
 
-                            <div>
+                            <div className='footer-text'>
                                 <p>Contáctenos</p>
                                 <p>+34 000 000 000</p>
                                 <p><a href='#email'>info@armonia</a></p>

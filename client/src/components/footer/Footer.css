@@ -1,8 +1,16 @@
 footer {
-    background-color: greenyellow;
+    background-color: #414141;
+    color: white;
     text-align: center;
 
 }
+
+.footer-cols{
+    border: 2px solid red;
+    margin: px;
+}
+/* 
+.footer- */
 
 .footer-cols img {
     width: 40px;

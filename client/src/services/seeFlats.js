@@ -9,14 +9,10 @@ export default class seeFlats {
     }
 
     getFlat = () => {
-        this.service.get('home')
-        .then(response => {console.log(response.data)})
+        return this.service.get('home')
+        .then(response => {return response.data})
         .catch(err => {console.log(err)})
     }
-
-
-
-
 
 }
 

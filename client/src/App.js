@@ -26,6 +26,7 @@ class App extends Component {
     return (
 
       <div className='app' style={{height: '100%'}}>
+      
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route exact path='/buy' component={Buy}/>
@@ -33,6 +34,7 @@ class App extends Component {
           <Route exact path='/contact' component={Contact}/>
           <Route exact path='/news' component={News}/>
         </Switch>
+
 {/* import React, { Component } from 'react';
 import logo from './logo.svg';
 import MapContainer from './component1/MapContainer'

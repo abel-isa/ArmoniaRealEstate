@@ -56,14 +56,8 @@
     padding-top: 35px;
     padding-bottom: 50px;
     width: 450px;
-    float: left;
-    left: 50%;
-    position: absolute;
-    margin-top: 30px;
-    margin-left: -260px;
-    margin-bottom: 20px;
-    -moz-border-radius: 7px;
-    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    margin: 30px auto;
 }
 
 .feedback-input {
@@ -351,9 +345,7 @@ textarea:focus {
 @media only screen and (max-width: 580px) {
     #form-div {
         left: 3%;
-        margin-right: 3%;
         width: 88%;
-        margin-left: 0;
         padding-left: 3%;
         padding-right: 3%;
     }
