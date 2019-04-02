@@ -6,11 +6,12 @@ footer {
 }
 
 .footer-cols{
-    border: 2px solid red;
-    margin: px;
+    /* border: 2px solid red; */
 }
-/* 
-.footer- */
+
+.footer-text{
+    border-left: 2px solid red;
+}
 
 .footer-cols img {
     width: 40px;

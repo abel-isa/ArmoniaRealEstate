@@ -51,7 +51,7 @@ class Footer extends Component {
                                 </figure>
                             </div>
 
-                            <div>
+                            <div className='footer-text'>
                                 <p>Horario de Oficina</p>
                                 <p>+Lunes a Viernes</p>
                                 <p>10:00am - 9:00pm</p>
@@ -67,7 +67,7 @@ class Footer extends Component {
                                 </figure>
                             </div>
 
-                            <div>
+                            <div className='footer-text'>
                                 <p>Nuestra ubicación</p>
                                 <p>C/ Serrano, 19.</p>
                                 <p>28001, Madrid</p>
