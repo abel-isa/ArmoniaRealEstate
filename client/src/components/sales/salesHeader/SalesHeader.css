@@ -1,0 +1,10 @@
+.sales-header {
+    color: #fff;
+	text-align: center;
+    padding: 30px 0;
+    background-image: url('../../home/welcome/madridColor.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    /* background-attachment: fixed; */
+}

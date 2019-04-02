@@ -2,13 +2,14 @@ const {Schema, model} = require("mongoose")
 
 
 
-const noticiaSchema = new Schema({
+const newsSchema = new Schema({
     img: String,
     title: String, 
-    description: Number,
+    description: String,
   }, {
       timestamps: true
   })
 
-const Noticia = model("Noticia", noticiaSchema)
+const News = model("Noticia", newsSchema)
 
+module.exports = News

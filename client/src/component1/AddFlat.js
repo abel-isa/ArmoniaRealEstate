@@ -46,6 +46,21 @@ class AddFlat extends Component {
         })
     }
 
+    handleChangeFileState = e => {
+        const { name, files } = e.target;
+        let gallery = [];
+        for(let i = 0; i < files.length; i++){
+            gallery.push(files[i])
+        }
+
+        this.setState({...this.state,
+            flat: {
+             ...this.state.flat,   
+             [name]: gallery
+            }
+        })
+    }
+
     handleSubmit = e => {
         e.preventDefault()
 

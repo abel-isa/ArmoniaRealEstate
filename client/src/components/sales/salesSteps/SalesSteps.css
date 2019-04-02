@@ -1,0 +1,43 @@
+
+:root {
+    --line-height: 50px;
+}
+
+.steps {
+    position: relative;
+}
+.steps p {
+    margin-left:  calc( var(--line-height) + 20px );
+}
+
+.steps span {
+    background: black;
+    width:  var(--line-height);
+    height:  var(--line-height);
+    line-height:  var(--line-height);
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    left: 10px;
+}
+
+.steps span, .steps p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.steps div {
+    height:  calc( var(--line-height) + 50px );
+    position: relative;
+}
+
+.steps .line {
+    position: absolute;
+    height: 85%;
+    width: 1px;
+    border-left: 1px solid black;
+    left: 35px;
+    top: 124px;
+}
+
