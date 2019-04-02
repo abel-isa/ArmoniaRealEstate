@@ -41,6 +41,21 @@ class AddFlat extends Component  {
         })
     }
 
+    handleChangeFileState = e => {
+        const { name, files } = e.target;
+        let gallery = [];
+        for(let i = 0; i < files.length; i++){
+            gallery.push(files[i])
+        }
+
+        this.setState({...this.state,
+            flat: {
+             ...this.state.flat,   
+             [name]: gallery
+            }
+        })
+    }
+
     handleSubmit = e => {
         e.preventDefault()
 
@@ -164,7 +179,7 @@ class AddFlat extends Component  {
 
             <legend>Imágenes:</legend>
             <fielset>
-            <input type="file" name="img" value=""/>
+            <input type="file" name="img" multiple onChange={(e) => this.handleChangeFileState(e)}/>
             </fielset>
 
             <br></br>

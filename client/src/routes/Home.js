@@ -64,15 +64,15 @@ class Home extends Component {
 
       <div style={{height: '100%'}}>
 
-        {/* <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
         <SideDrawer show={this.state.sideDrawerOpen}/>
-        {backdrop} */}
+        {backdrop}}
 
         <Divider/>
 
         <Welcome/>
 
-        {this.state.pisos.map((piso,index) => <FlatCard key={index} flat={piso}/>)}
+        {this.state.pisos ? this.state.pisos.map((piso,index) => <FlatCard key={index} flat={piso}/>): null}
 
         {/* <HelpForm2/> */}
 

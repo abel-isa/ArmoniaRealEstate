@@ -8,11 +8,11 @@ const SalesHeader = () => {
 
     return (
         
-        <header >
+        <header className="sales-header" >
 
             <h2>Vende con Seguridad <br></br> Vende con ARMONIA</h2>
 
-            <a className='btn btn-primary btn-lg' href='#contacto'>Contáctenos</a>
+            <a className='btn btn-primary btn-lg' href='/contact'>Contáctenos</a>
 
         </header>
     )

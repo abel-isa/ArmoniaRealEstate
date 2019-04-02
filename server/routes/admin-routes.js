@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const Piso = require('../models/Piso')
+const News = require('../models/News')
 const uploader = require('../configs/cloudinary')
 
 
@@ -10,11 +11,11 @@ const uploader = require('../configs/cloudinary')
 //   const nuestroSaco = req.params.nuestroSaco // nuestroSaco = 345678
 // })
 
-router.post('/introducirPiso',uploader.single("imageUrl"),(req, res) => {
+router.post('/introducirPiso', uploader.array("imageUrl"),(req, res) => {
     const piso = {title,description,gallery,price,rooms,surface,terrace,heating,bathrooms,houseSize,parking,build,type,reference,state,floor} = req.body
     //midelware cloudinary. para lasm fotos req.file
-    // const imgURL = req.file.secureURL
-    console.log(piso)
+    console.log(req.files.map((file) => file.secure_url));
+    piso.gallery = req.files.map((file) => file.secure_url);
     const newPiso = new Piso(piso)
     newPiso.save()
     .then((piso)=>{ 
@@ -24,11 +25,13 @@ router.post('/introducirPiso',uploader.single("imageUrl"),(req, res) => {
 })
 
 router.post('/introducirNoticia',uploader.single("imageUrl"),(req, res) => {
-    const {img,title,description,} = req.body
+    const news ={title,description} = req.body
+    news.img = req.file.secure_url
     //idem fotos
-    Noticia.save({img,title,description,})
-    .then(()=>{
-        res.json()
+    const newNews = new News(news)
+    newNews.save(news)
+    .then((news)=>{
+        res.json({msg:'el anuncio se ha subido', news})
     })
    
 })
