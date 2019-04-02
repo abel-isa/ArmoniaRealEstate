@@ -6,6 +6,8 @@ import './SideDrawer.css'
 
 const SideDrawer = props => {
     
+
+    
     let drawerClasses = 'side-drawer'
 
     if (props.show) {
@@ -15,7 +17,7 @@ const SideDrawer = props => {
     return (
         <nav className={drawerClasses}>
 
-<ul>
+<ul onClick={props.fn}>
                     <li>
                         <Link to="/sell">Vender</Link>
                     </li>

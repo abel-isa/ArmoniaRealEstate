@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 
-import TheNavbar from "../components/navbar/TheNavbar"
-import Footer from '../components/footer/Footer'
-
 
 
 class Contact extends Component {
@@ -13,9 +10,6 @@ class Contact extends Component {
 
       <div>
 
-        <TheNavbar/>
-
-        <Footer/>
 
 
       </div>

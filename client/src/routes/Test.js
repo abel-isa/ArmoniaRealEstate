@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 
 
 
-
-class Buy extends Component {
+class Test extends Component {
 
   render() {
 
@@ -11,8 +10,7 @@ class Buy extends Component {
 
       <div>
 
-
-
+          <p>Test Site</p>
 
       </div>
 
@@ -22,4 +20,4 @@ class Buy extends Component {
 
 }
 
-export default Buy;
+export default Test;
