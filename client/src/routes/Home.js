@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 
 import Welcome from '../components/home/welcome/Welcome'
+import HelpForm2 from '../components/helpForm2/HelpForm2'
 import FlatCard from '../component1/FlatCard'
 import seeFlats from '../services/seeFlats'
-import HelpForm2 from '../components/helpForm2/HelpForm2'
+import Advice from '../components/home/advice/Advice'
+
 
 
 
@@ -24,13 +26,15 @@ class Home extends Component {
     return (
 
       <div style={{ height: '100%' }}>
-
+        
         <Welcome />
-
-        {this.state.pisos.map((piso, index) => <FlatCard key={index} flat={piso} />)}
 
         <HelpForm2 />
 
+        <Advice />
+        
+
+        {this.state.pisos.map((piso, index) => <FlatCard key={index} flat={piso} />)}
 
       </div>
 

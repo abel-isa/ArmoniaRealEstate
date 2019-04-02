@@ -15,7 +15,8 @@ class HelpForm2 extends Component {
                 phone: '',
                 email: '',
                 postalCode: '',
-                text: ''
+                text: '',
+                privacity: false
             }
         }
 
@@ -36,12 +37,27 @@ class HelpForm2 extends Component {
         })
     }
 
+    handleChangeCheckState = e => {
+        const { name, checked } = e.target;
+
+        this.setState({
+            ...this.state,
+            helpForm2: {
+                ...this.state.helpForm2,
+                [name]: checked
+            }
+        })
+    }
+
 
 
     handleSubmit = e => {
         e.preventDefault()
-
-        this.helpForm2Service.sendEmail(this.state.helpForm2)
+        if(this.state.helpForm2.privacity){
+            this.helpForm2Service.sendEmail(this.state.helpForm2)
+        } else {
+            // alert('El PUTO CHECK!!!!');
+        }
     }
 
     render() {
@@ -50,7 +66,7 @@ class HelpForm2 extends Component {
 
             <div id="form-main">
                 <div id="form-div">
-                    <form className="form" id="form1">
+                    <form className="form" id="form1" onSubmit={this.handleSubmit}>
 
                         <h3 className="form-tittle">Escribe tu consulta a un <a href="#Asesor">Asesor Especializado</a></h3>
 
@@ -75,7 +91,7 @@ class HelpForm2 extends Component {
                         </p>
 
                         <p className="checkbox">
-                            <input type="checkbox" id="test1" />
+                            <input type="checkbox" name='privacity' id="test1" onChange={this.handleChangeCheckState}/>
                             <label for="test1">He leido y acepto la <a href="#Politica">Política de Privacidad</a></label>
                         </p>
 
