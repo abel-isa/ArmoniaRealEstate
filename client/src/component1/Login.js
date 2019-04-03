@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import AuthService from '../service/authService'
-
+import AuthService from '../services/authService'
+import './Login.css'
 
 class Login extends Component {
     constructor(props) {
@@ -13,14 +13,7 @@ class Login extends Component {
         event.preventDefault();
         const username = this.state.username;
         const password = this.state.password;
-        this.service.login(username, password)
-            .then(response => {
-                this.setState({ username: "", password: "" })
-                // this.props.setUser(response)
-                // window.location.assign('/coasters')
-                //con el redirect es mejor porque no te vuelve a cargar la pagina 
-            })
-            .catch(error => console.log(error))
+        this.props.getLogin(username, password)
     }
 
     handleChange = (event) => {
@@ -30,8 +23,10 @@ class Login extends Component {
 
     render() {
         return (
-            <div className="container">
-                <h1>Editar contenido</h1>
+    
+            <div className="container login-div">
+			    <div>Editar<span>Contenido</span></div>
+                
                 <div className="row">
                     <div className="col-sm-12">
                         <form onSubmit={this.handleFormSubmit}>
@@ -42,7 +37,7 @@ class Login extends Component {
 
                             <div className="form-group">
                                 <label>Password</label>
-                                <textarea name="password" className="form-control" value={this.state.password} onChange={e => this.handleChange(e)} />
+                                <input name="password" className="form-control" value={this.state.password} onChange={e => this.handleChange(e)} />
                             </div>
                             <input type="submit" value="Login" className="btn btn-outline-dark" />
                         </form>
@@ -55,4 +50,6 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default Login
+
+

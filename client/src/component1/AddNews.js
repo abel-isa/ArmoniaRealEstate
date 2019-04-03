@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Link, Redirect } from 'react-router-dom'
 
 import AdminRoutes from '../services/adminRoutes'
+import './AddNews.css'
 
 
 class AddNews extends Component {
@@ -56,24 +57,37 @@ class AddNews extends Component {
 
     render () {
         return (
-            <div className="flat-form-container">
-            <legend>Añadir una noticia:</legend>
-            <form onSubmit={this.handleSubmit}>
+            <div id="news-form-main">
+            <div className="news-form-container">
+            <div className="add-news"> <Link to="/addFlat">Añadir vivienda</Link></div> 
+            <br></br>
+            <br></br>
+            <div className="log-out" onClick={this.props.logout}> <Link to="/">LogOut</Link></div>
+
+            <div id="news-form-div">
+            <h3 className="news-form-tittle">Añadir noticia</h3>
+            <form className="news-form" id="news-form1" onSubmit={this.handleSubmit}>
+            <legend className="news-form-legend">Descripción de la noticia:</legend>
+          
             <label>Titular</label>
-            <input type="text" name="title" value={this.state.news.title} onChange={e => this.handleChangeState(e)} placeholder="título del anuncio"></input>
+            <input className="news-feedback-input" type="text" name="title" value={this.state.news.title} onChange={e => this.handleChangeState(e)} placeholder="título del anuncio"></input>
 
             <label>Contenido</label>
-            <textarea name="description" value={this.state.news.description} onChange={e => this.handleChangeState(e)}class="form textarea"  placeholder="Contenido"></textarea> 
+            <textarea className="news-feedback-input" name="description" value={this.state.news.description} onChange={e => this.handleChangeState(e)}class="form textarea"  placeholder="Contenido"></textarea> 
 
 
-            <legend>Imágenes:</legend>
-            <fielset>
-            <input type="file" name="img" onChange={e => this.handleChangeFileState(e)}></input>
-            </fielset>           
+            <legend className="news-form-legend">Imágenes:</legend>
+            <input class='file-input' id="f02" type="file" name="img" value="" />
+            <label class='file-label' for="f02">Añadir foto</label>        
             
-            <button type="submit" id="submit" name="submit" class="form-btn semibold">Enviar noticia</button> 
-            </form>
-        </div>
+            <div className="news-submit">
+             <input id="news-button-blue" type="submit" name="submit" value="Añadir noticia"/>
+            <div className="news-ease"></div>
+            
+            </div>            </form>
+            </div>
+            </div>
+            </div>
         )
     }
 }

@@ -94,10 +94,14 @@ class AddFlat extends Component {
 
 
 
-
     render() {
+        console.log(this.props)
         return (
             <div id="flat-form-main">
+               <div className="add-new"> <Link to="/addNews">Añadir noticia</Link></div>
+               <br></br><br></br>
+               <div className="log-out" onClick={this.props.logout}> <Link to="/">LogOut</Link></div>
+
                 {this.state.redirect ? <Redirect to="/listFlats" /> : //cuando el damos añadir vivienda el state redirect se vuelve true y nos redirecciona
                     <div id="flat-form-div">
                         <h3 className="flat-form-tittle">Añadir una vivienda</h3>
@@ -218,7 +222,7 @@ class AddFlat extends Component {
 
 
                             <input class='file-input' id="f02" type="file" name="img" value="" />
-                            <label class='file-label' for="f02">Add profile picture</label>
+                            
 
 
                             <br></br>
