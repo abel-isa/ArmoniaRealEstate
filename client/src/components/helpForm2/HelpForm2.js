@@ -65,7 +65,9 @@ class HelpForm2 extends Component {
         return (
 
             <div id="form-main">
+
                 <div id="form-div">
+
                     <form className="form" id="form1" onSubmit={this.handleSubmit}>
 
                         <h3 className="form-tittle">Escribe tu consulta a un <a href="#Asesor">Asesor Especializado</a></h3>
@@ -102,7 +104,9 @@ class HelpForm2 extends Component {
                         </div>
                         
                     </form>
+
                 </div>
+                
             </div>
 
 

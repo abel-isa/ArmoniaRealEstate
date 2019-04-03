@@ -21,7 +21,7 @@ mongoose.connect(process.env.DB,{ useNewUrlParser: true })
         houseSize: 161,
         parking: "opcional",
         build: 1965,
-        type: "exterior",
+        type: "en venta",
         location: {lat:232323,lng:4343434}
       }
     

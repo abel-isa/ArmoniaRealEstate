@@ -1,0 +1,74 @@
+.flat-card-container{
+    background-color: #f9fcff;
+    border: 2px solid #c9cfcf;
+    border-radius: 15px;
+    /* left: 3%; */
+    width: 95%;
+    /* padding-left: 3%; */
+    /* padding-right: 3%; */
+}
+
+.flat-card-image{
+    background-image: url(./flatCardImg/madridColor.jpg);
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: aliceblue;
+    height: 10rem;
+    margin: 0 25px
+}
+
+.col.extra-padding {
+    padding: 0 30px;
+}
+
+.extra-padding2 {
+    margin-top: 50px;
+}
+
+.flat-type {
+    background-color: #27ae61;
+    margin: 0 30px;
+    border: 1px solid #27ae61;
+    border-radius: 10px
+}
+
+#flatCardID1 {
+    margin: 0;
+    color: white;
+    font-size: 20px;
+}
+
+#flatCardID2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.hr-flatcard {
+    margin: 40px 70px 20px 70px;
+    border-width: 2px;
+}
+
+#flatCardID3 {
+    margin: 0;
+    color: white;
+    font-size: 20px;
+}
+
+.flat-type2 {
+    background-color: #8e9dab;
+    margin: 0 100px;
+    border: 1px solid #8e9dab;
+    border-radius: 10px
+}
+
+.flat-margins{
+    border: 1px solid;
+    margin: 7px
+}
+
+.flat-svg{
+    /* width: 30px; */
+    height: 40px;
+    margin: 10px 0;
+}

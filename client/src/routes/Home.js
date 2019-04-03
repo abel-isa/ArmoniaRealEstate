@@ -8,7 +8,6 @@ import Advice from '../components/home/advice/Advice'
 
 
 
-
 class Home extends Component {
 
   constructor(props) {
