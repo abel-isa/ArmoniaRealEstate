@@ -11,7 +11,7 @@
 }
 
 .steps span {
-    background: black;
+    background: #ff942a;
     width:  var(--line-height);
     height:  var(--line-height);
     line-height:  var(--line-height);
@@ -36,8 +36,27 @@
     position: absolute;
     height: 85%;
     width: 1px;
-    border-left: 1px solid black;
-    left: 35px;
-    top: 124px;
+    border-left: 4px solid #ff942a;
+    left: 33px;
+    top: 101px;
+    margin-left: 3rem;
+    z-index: -1;
 }
 
+.metodo-armony {
+    text-align: center; 
+    margin-top: 41px;    
+ } 
+
+.steps > div {
+    margin: 30px 3rem;
+}
+
+.steps b {
+    display: block;
+    font-size: 1.5rem;
+}
+
+.title-step {
+
+}

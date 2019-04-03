@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './SalesHeader.css'
 
@@ -10,10 +11,10 @@ const SalesHeader = () => {
         
         <header className="sales-header" >
 
-            <h2>Vende con Seguridad <br></br> Vende con ARMONIA</h2>
+            <h2 className="header-text">Vende con Seguridad <br></br> Vende con ARMONIA</h2>
 
-            <a className='btn btn-primary btn-lg' href='/contact'>Contáctenos</a>
-
+           
+            <Link className='btn btn-primary btn-lg' to="/contact">Contáctenos</Link>
         </header>
     )
 }
