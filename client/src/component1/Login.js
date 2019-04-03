@@ -18,14 +18,7 @@ class Login extends Component {
         event.preventDefault();
         const username = this.state.username;
         const password = this.state.password;
-        this.service.login(username, password)
-            .then(response => {
-                this.setState({ username: "", password: "" })
-                // this.props.setUser(response)
-                // window.location.assign('/coasters')
-                //con el redirect es mejor porque no te vuelve a cargar la pagina 
-            })
-            .catch(error => console.log(error))
+        this.props.getLogin(username, password)
     }
 
     handleChange = (event) => {
@@ -54,7 +47,7 @@ class Login extends Component {
                             <div className="login-submit">
                                 <input type="submit" value="Login" id="login-button-blue"/>
                                 <div className="login-ease"></div>
-                            </div>
+git                            </div>
 
                         </form>
                     

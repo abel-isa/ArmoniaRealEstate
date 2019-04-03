@@ -7,6 +7,7 @@ const passport = require('passport')
 
 
 router.post('/login', (req, res, next) => {
+    console.log("entra")
     passport.authenticate('local', (err, theAdmin, failureDetails) => {
         if (err) {
             res.status(500).json({ message: 'Algo va mal con la autentificación del administrador' })
@@ -50,7 +51,7 @@ router.get('/loggedin', (req, res, next) => {
         res.status(200).json(req.user)
         return
     }
-    res.status(403).json({ message: 'No está autortizado' })
+    res.status(403).json({ message: 'No has inicado sesión' })
 });
 
 

@@ -8,6 +8,8 @@ const nodemailer = require('nodemailer');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session)
 
 const cors = require("cors")
 
@@ -30,6 +32,15 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
+
+app.use(session({
+
+  secret:process.env.SECRET,
+  resave: true,
+  saveUninitialized: true,
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
+
+}))
 
 app.use(passport.initialize());
 app.use(passport.session())
@@ -60,7 +71,7 @@ app.use(cookieParser());
       
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')))
 
 
 
@@ -85,5 +96,8 @@ app.use('/api/admin/auth', auth)
 const fileUploadRoute = require('./routes/file-upload-routes')
 app.use('/api/admin/noticia', fileUploadRoute)
 
+app.use((re,res,next) => {
+  res.sendFile(__dirname + "/public/index.html")
+})
 
 module.exports = app;
