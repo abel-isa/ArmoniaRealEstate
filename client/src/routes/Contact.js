@@ -16,14 +16,7 @@ class Contact extends Component {
 
         <ContactHeader/>
 
-        {/* <TheNavbar/> */}
-
         <MapContainer/>
-
-        {/* <Footer/> */}
-
-
-
 
       </div>
 

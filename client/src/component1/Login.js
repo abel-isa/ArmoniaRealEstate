@@ -37,7 +37,7 @@ class Login extends Component {
                             <h3 className="login-tittle">Editar contenido</h3>
 
                             <p className="login-name">
-                                <input name="username" type="text" className="feedback-input" placeholder="Username" id="login-name" value={this.state.username} onChange={e => this.handleChange(e)} />
+                                <input name="username" type="text" className="feedback-input" placeholder="Correo" id="login-email" value={this.state.username} onChange={e => this.handleChange(e)} />
                             </p>
 
                             <p>
@@ -47,7 +47,7 @@ class Login extends Component {
                             <div className="login-submit">
                                 <input type="submit" value="Login" id="login-button-blue"/>
                                 <div className="login-ease"></div>
-git                            </div>
+                          </div>
 
                         </form>
                     

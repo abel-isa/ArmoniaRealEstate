@@ -11,10 +11,12 @@ const SalesHeader = () => {
         
         <header className="sales-header" >
 
-            <h2 className="header-text">Vende con Seguridad <br></br> Vende con ARMONIA</h2>
+            <h1 id="welcome-header-h2">Vende con Seguridad <br></br> Vende con ARMONIA</h1>
 
-           
+            <br></br>
+
             <Link className='btn btn-primary btn-lg' to="/contact">Contáctenos</Link>
+
         </header>
     )
 }

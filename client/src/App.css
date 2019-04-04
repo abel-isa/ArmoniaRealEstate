@@ -2,5 +2,15 @@
   /* font-family: 'Lobster Two', cursive; */
 }
 
+h2 {
+  font-weight: bold;
+  color: black;
+}
+
+p {
+  line-height: 2;
+  font-size: 18px
+}
+
 
 

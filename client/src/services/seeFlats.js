@@ -14,6 +14,12 @@ export default class seeFlats {
         .catch(err => {console.log(err)})
     }
 
+
+    getOneFlat = (idFlat) => {
+        return this.service.get(`detailsFlat/${idFlat}`)
+        .then(response => response.data)
+        .catch(err => console.log(err))
+    }
 }
 
 //creamos una clas epafra jacer la comunic de front  a back. 

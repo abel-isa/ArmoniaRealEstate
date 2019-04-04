@@ -25,7 +25,7 @@ class Advice extends Component {
         
             <section className="section-advice">
     
-                <h3 className='advice-title'>Mucho más que una inmobiliaria</h3>
+                <h2 className='advice-title'>Mucho más que una inmobiliaria</h2>
     
                 <p>Garantizamos el servicio de la experiencia de la compra y/o venta de sus inmuebles</p>
     

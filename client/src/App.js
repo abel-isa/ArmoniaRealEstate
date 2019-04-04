@@ -10,6 +10,8 @@ import Test from './routes/Test'
 import LoginAdmin from './routes/LoginAdmin'
 import AddFlatAdmin from './routes/AddFlatAdmin'
 import AddNewsAdmin from './routes/AddNewsAdmin'
+import PrivacyPolicy from './routes/PrivacyPolicy'
+import FlatInfo from './routes/FlatInfo'
 
 
 import Toolbar from "./components/navbar/Toolbar"
@@ -104,17 +106,19 @@ class App extends Component {
         <Divider />
 
         <Switch>
+          
           <Route exact path='/' component={Home} />
           <Route exact path='/buy' component={Buy} />
           <Route exact path='/sell' component={Sell} />
           <Route exact path='/contact' component={Contact} />
           <Route exact path='/news' component={News} />
+
           <Route exact path='/test' component={Test} />
+          <Route exact path='/privacy-policy' component={PrivacyPolicy} />
+          <Route exact path='/flat-info/:id' component={FlatInfo} />
           <Route exact path='/login' render={ () => <LoginAdmin getLogin={this.getLogin}></LoginAdmin>}/>
           {this.state.isAdmin ? this.routerAdmin() : null}
           <Route path='/' render={() => <div><p>Peinate</p></div>}></Route>
-
-          
 
         </Switch>
 

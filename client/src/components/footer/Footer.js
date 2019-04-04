@@ -23,11 +23,11 @@ class Footer extends Component {
 
             <footer>
 
-                <section className='container footer-section-1'>
+                <section className='footer-section-1'>
 
-                    <article className='row footer-row'>
+                    <article className='footer-row'>
 
-                        <div className='col-lg-4 footer-cols'>
+                        <div className='footer-cols'>
 
                             <div>
                                 <figure>
@@ -43,7 +43,7 @@ class Footer extends Component {
 
                         </div>
 
-                        <div className='col-lg-4 footer-cols'>
+                        <div className='footer-cols'>
 
                             <div>
                                 <figure>
@@ -59,7 +59,7 @@ class Footer extends Component {
 
                         </div>
 
-                        <div className='col-lg-4 footer-cols'>
+                        <div className='footer-cols'>
 
                             <div>
                                 <figure>
@@ -81,13 +81,13 @@ class Footer extends Component {
 
                 </section>
 
-                <section className='container footer-section-2'>
+                <section className='footer-section-2'>
 
                     <h3>Suscríbete</h3>
 
                 </section>
 
-                <section className='container footer-section-3'>
+                <section className='footer-section-3'>
 
                     <figure>
                         <img src={phoneIcon} alt="Phone Icon" />
@@ -95,7 +95,7 @@ class Footer extends Component {
 
                 </section>
 
-                <section className='container footer-section-4'>
+                <section className='footer-section-4'>
 
                     <p className='p-copyright'>© 2019 Copyright: ARMONÍA Real Estate</p>
 

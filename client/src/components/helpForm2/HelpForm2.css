@@ -339,6 +339,11 @@ textarea:focus {
     transform: scaleX(1);
 }
 
+.privacy-policy{
+    font-size: 15px;
+    font-weight: bold;
+}
+
 /* Media query */
 
 @media only screen and (max-width: 580px) {

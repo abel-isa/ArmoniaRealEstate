@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
+
 import HelpForm2Service from './../../services/helpForm2Service'
 
 import './HelpForm2.css'
@@ -50,13 +52,12 @@ class HelpForm2 extends Component {
     }
 
 
-
     handleSubmit = e => {
         e.preventDefault()
         if(this.state.helpForm2.privacity){
             this.helpForm2Service.sendEmail(this.state.helpForm2)
         } else {
-            // alert('El PUTO CHECK!!!!');
+            alert('Debe estar de acuerdo con nuestra Política de Privacidad');
         }
     }
 
@@ -94,7 +95,9 @@ class HelpForm2 extends Component {
 
                         <p className="checkbox">
                             <input type="checkbox" name='privacity' id="test1" onChange={this.handleChangeCheckState}/>
-                            <label for="test1">He leido y acepto la <a href="#Politica">Política de Privacidad</a></label>
+                            <label className='privacy-policy' for="test1">He leido y acepto la 
+                                <Link to="/privacy-policy"> Política de Privacidad</Link>
+                            </label>
                         </p>
 
 

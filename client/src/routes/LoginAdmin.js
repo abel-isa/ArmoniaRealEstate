@@ -20,7 +20,12 @@ class LoginAdmin extends Component {
     return (
 
       <div>
-             
+        
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+
           
         <Login getLogin={this.props.getLogin}/>
 

@@ -31,9 +31,8 @@ class Home extends Component {
         <HelpForm2 />
 
         <Advice />
-        
 
-        {this.state.pisos.map((piso, index) => <FlatCard key={index} flat={piso} />)}
+        {Array.isArray(this.state.pisos) ? this.state.pisos.map((piso, index) => <FlatCard key={index} flat={piso} />) : null}
 
       </div>
 

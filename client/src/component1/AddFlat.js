@@ -98,9 +98,26 @@ class AddFlat extends Component {
         console.log(this.props)
         return (
             <div id="flat-form-main">
-               <div className="add-new"> <Link to="/addNews">Añadir noticia</Link></div>
-               <br></br><br></br>
-               <div className="log-out" onClick={this.props.logout}> <Link to="/">LogOut</Link></div>
+
+            <br></br>
+            <br></br>
+
+               <div className="flat-submit up-button"> 
+                    <Link id="flat-button-blue" name="submit" to="/addNews">Añadir noticia</Link>
+                    <div className="flat-ease"></div>
+               </div>
+               
+               <br></br>
+               <br></br>
+
+
+               <div className="flat-submit up-button" onClick={this.props.logout}> 
+                    <Link id="flat-button-blue" name="submit" to="/">Logout</Link>
+                    <div className="flat-ease"></div>
+               </div>
+
+               <br></br>
+
 
                 {this.state.redirect ? <Redirect to="/listFlats" /> : //cuando el damos añadir vivienda el state redirect se vuelve true y nos redirecciona
                     <div id="flat-form-div">
