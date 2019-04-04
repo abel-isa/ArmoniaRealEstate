@@ -14,6 +14,18 @@ export default class seeFlats {
         .catch(err => {console.log(err)})
     }
 
+    getNew = () => {
+        return this.service.get('news')
+        .then(response => {return response.data})
+        .catch(err => {console.log(err)})
+    }
+
+    getOneNews = (idNews) => {
+        return this.service.get(`detailsNews/${idNews}`)
+        .then(response => response.data)
+        .catch(err => console.log(err))
+    }
+
 }
 
 //creamos una clas epafra jacer la comunic de front  a back. 

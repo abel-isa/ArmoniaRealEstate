@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Welcome from '../components/home/welcome/Welcome'
 import HelpForm2 from '../components/helpForm2/HelpForm2'
 import FlatCard from '../component1/FlatCard'
-import seeFlats from '../services/seeFlats'
+import seeFlats from '../services/seeFlatsNews'
 import Advice from '../components/home/advice/Advice'
 
 

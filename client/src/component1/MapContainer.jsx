@@ -3,7 +3,6 @@ import React, {Component} from 'react'
 
 
 
-
 import {Map, InfoWindow, Marker,} from 'google-maps-react';
 
 export class MapContainer extends Component {
@@ -11,6 +10,7 @@ export class MapContainer extends Component {
     showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {},
+    address: ''
   };
 
   onMarkerClick = (props, marker, e) =>
@@ -29,17 +29,17 @@ export class MapContainer extends Component {
     }
   };
 
-
   render() {
     const style = {
       width: '75%',
       height: '75%'
     }
-    return (
+    return (<div>
+       
       <Map google={this.props.google} initialCenter={{
         lat: 40.4401068,
         lng: -3.701612
-    }} zoom={14} style={style} onClick={this.onMapClicked}> 
+      }} zoom={14} style={style} onClick={this.onMapClicked}> 
 
         <Marker onClick={this.onMarkerClick}
                 name={'Tu cosa'} />
@@ -51,6 +51,7 @@ export class MapContainer extends Component {
             </div>
         </InfoWindow>
         </Map>
+          </div>
     );
   }
 }

@@ -53,7 +53,7 @@ const FlatCard = (props) => {
                     <br></br>
                     <h4 className="card-text">{flat.title}</h4>
                     <br></br>
-                    <p className="card-text">{flat.description}</p>
+                    {flat.description ? <p className="card-text">{flat.description.slice(0,100)+" ..."}</p>: null}
 
                     <br></br>
 

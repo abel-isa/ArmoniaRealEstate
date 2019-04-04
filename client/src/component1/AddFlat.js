@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import AdminRoutes from '../services/adminRoutes'
-
+import PlacesAutocomplete from 'react-places-autocomplete';
+import {
+    geocodeByAddress,
+    geocodeByPlaceId,
+    getLatLng,
+} from 'react-places-autocomplete';
+import {GoogleApiWrapper} from 'google-maps-react';
 import './AddFlat.css'
 
 
-class AddFlat extends Component {
+export class AddFlat extends Component {
     constructor() {
         super()
         this.state = {
@@ -26,7 +32,9 @@ class AddFlat extends Component {
                 reference: '',
                 state: '',
                 floor: '',
-                location: { type: '', coordinates: [] }
+                distrit:'',
+                neighbourhood:'',
+                location: {  coordinates: [] }
             }
         }
         this.adminRoute = new AdminRoutes()
@@ -49,14 +57,15 @@ class AddFlat extends Component {
     handleChangeFileState = e => {
         const { name, files } = e.target;
         let gallery = [];
-        for(let i = 0; i < files.length; i++){
+        for (let i = 0; i < files.length; i++) {
             gallery.push(files[i])
         }
 
-        this.setState({...this.state,
+        this.setState({
+            ...this.state,
             flat: {
-             ...this.state.flat,   
-             [name]: gallery
+                ...this.state.flat,
+                [name]: gallery
             }
         })
     }
@@ -86,6 +95,8 @@ class AddFlat extends Component {
         //         reference:'',
         //         state:'',
         //         floor:'',
+                // distrit:'',
+                // neighbourhood:'',
         //         location: { type: { type: '' }, coordinates: [0] }
         //     }
         // })
@@ -93,14 +104,26 @@ class AddFlat extends Component {
     }
 
 
+    handleChange = address => {
+        this.setState({ flat:{...this.state.flat, address}});
+    };
+
+    handleSelect = address => {
+        console.log(address)
+        geocodeByAddress(address)
+            .then(results => getLatLng(results[0]))
+            .then(latLng => this.setState({ flat:{...this.state.flat, address, location:[latLng.lat, latLng.lng]}}))
+            .catch(error => console.error('Error', error));
+    };
+
 
     render() {
         console.log(this.props)
         return (
             <div id="flat-form-main">
-               <div className="add-new"> <Link to="/addNews">Añadir noticia</Link></div>
-               <br></br><br></br>
-               <div className="log-out" onClick={this.props.logout}> <Link to="/">LogOut</Link></div>
+                <div className="add-new"> <Link to="/addNews">Añadir noticia</Link></div>
+                <br></br><br></br>
+                <div className="log-out" onClick={this.props.logout}> <Link to="/">LogOut</Link></div>
 
                 {this.state.redirect ? <Redirect to="/listFlats" /> : //cuando el damos añadir vivienda el state redirect se vuelve true y nos redirecciona
                     <div id="flat-form-div">
@@ -109,6 +132,15 @@ class AddFlat extends Component {
                         <form className="flat-form" id="flat-form1" onSubmit={this.handleSubmit}>
 
                             <legend className="flat-form-legend">Descrición de la vivienda:</legend>
+                            <p>
+                                <label>Distrito</label>
+                                <input className="flat-feedback-input" type="text" name="distrit" value={this.state.flat.distrit} onChange={e => this.handleChangeState(e)} placeholder="distrito" />
+                            </p> 
+
+                            <p>
+                                <label>Barrio</label>
+                                <input className="flat-feedback-input" type="text" name="neighbourhood" value={this.state.flat.neighbourhood} onChange={e => this.handleChangeState(e)} placeholder="barrio" />
+                            </p>
 
                             <p>
                                 <label>Título</label>
@@ -213,7 +245,45 @@ class AddFlat extends Component {
                             <legend className="flat-form-legend">Ubicación:</legend>
 
                             <p>
-                                <input type="text" name="location" value={this.state.flat.location} onChange={(event) => this.handleChangeState(event)} placeholder="Dirección" />
+                                <PlacesAutocomplete
+                                    value={this.state.flat.address}
+                                    onChange={this.handleChange}
+                                    onSelect={this.handleSelect}
+                                >
+                                    {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+                                        <div>
+                                            <input
+                                                {...getInputProps({
+                                                    placeholder: 'Search Places ...',
+                                                    className: 'location-search-input',
+                                                })}
+                                            />
+                                            <div className="autocomplete-dropdown-container">
+                                                {loading && <div>Loading...</div>}
+                                                {suggestions.map(suggestion => {
+                                                    const className = suggestion.active
+                                                        ? 'suggestion-item--active'
+                                                        : 'suggestion-item';
+                                                    // inline style for demonstration purpose
+                                                    const style = suggestion.active
+                                                        ? { backgroundColor: '#fafafa', cursor: 'pointer' }
+                                                        : { backgroundColor: '#ffffff', cursor: 'pointer' };
+                                                    return (
+                                                        <div
+                                                            {...getSuggestionItemProps(suggestion, {
+                                                                className,
+                                                                style,
+                                                            })}
+                                                        >
+                                                            <span>{suggestion.description}</span>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        </div>
+                                    )}
+                                </PlacesAutocomplete>
+
                             </p>
 
                             {/* mapa  */}
@@ -222,14 +292,16 @@ class AddFlat extends Component {
 
 
                             <input class='file-input' id="f02" type="file" name="img" value="" />
-                            
+
 
 
                             <br></br>
                             <br></br>
+
+
 
                             <div className="flat-submit">
-                                <input id="flat-button-blue" type="submit" name="submit" value="Añadir vivienda"/>
+                                <input id="flat-button-blue" type="submit" name="submit" value="Añadir vivienda" />
                                 <div className="flat-ease"></div>
                             </div>
 
@@ -241,4 +313,7 @@ class AddFlat extends Component {
     }
 }
 
-export default AddFlat
+
+export default GoogleApiWrapper({
+    apiKey: 'AIzaSyDUeQXCyJDlhOtCB8JwWAk8zCxpjk6k-jo'
+    })(AddFlat)
