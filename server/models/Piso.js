@@ -18,6 +18,8 @@ const pisoSchema = new Schema({
   reference:String,
   state:String,
   floor:String,
+  distrit:String,
+  neighbourhood:String,
   location: { type: { type: String }, coordinates: [Number] }
 }, {
     timestamps: true
