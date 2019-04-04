@@ -60,6 +60,10 @@ const FlatCard = (props) => {
                         <p className="card-text">{flat.description}</p>
 
                         <br></br>
+                    <br></br>
+                    <h4 className="card-text">{flat.title}</h4>
+                    <br></br>
+                    {flat.description ? <p className="card-text">{flat.description.slice(0,100)+" ..."}</p>: null}
 
                         <div className='flat-type2'>
                             <Link id='flatCardID3' to={`/flat-info/${flat._id}`}>Más info</Link>

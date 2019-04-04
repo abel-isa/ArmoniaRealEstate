@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route , Link} from 'react-router-dom'
 
 import Home from './routes/Home'
 import Buy from './routes/Buy'
@@ -12,6 +12,8 @@ import AddFlatAdmin from './routes/AddFlatAdmin'
 import AddNewsAdmin from './routes/AddNewsAdmin'
 import PrivacyPolicy from './routes/PrivacyPolicy'
 import FlatInfo from './routes/FlatInfo'
+import NewsDeatils from './component1/NewsDetails'
+
 
 
 import Toolbar from "./components/navbar/Toolbar"
@@ -86,6 +88,13 @@ class App extends Component {
   }
 
 
+  setCookie = () => {
+    console.log(document.cookie)
+    document.cookie = "aceptaCookies=true;max-age=1000000"
+    this.setState();
+  }
+
+
   render() {
 
     let backdrop;
@@ -116,11 +125,24 @@ class App extends Component {
           <Route exact path='/test' component={Test} />
           <Route exact path='/privacy-policy' component={PrivacyPolicy} />
           <Route exact path='/flat-info/:id' component={FlatInfo} />
+          <Route exact path='/NewsDetails/:id' component={NewsDeatils} />
+         
+
           <Route exact path='/login' render={ () => <LoginAdmin getLogin={this.getLogin}></LoginAdmin>}/>
           {this.state.isAdmin ? this.routerAdmin() : null}
           <Route path='/' render={() => <div><p>Peinate</p></div>}></Route>
 
         </Switch>
+        {!document.cookie ? 
+          <div id="privacidad">
+          Las cookies nos ayudan a ofrecer nuestros servicios. Al utilizar nuestros servicios, acepta nuestro uso de cookies.
+          <a  target="_blank" href="politicaDePrivacidad">Más información</a>
+          <button onClick={this.setCookie}>Aceptar</button>
+          </div>: null
+        }
+
+
+
 
       </div>
 
