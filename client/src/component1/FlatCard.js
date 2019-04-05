@@ -9,7 +9,8 @@ const FlatCard = (props) => {
     return (
 
         <section className='flat-card-section'>
-
+                   
+            
                 <div className='text-center align-content-center align-items-center justify-content-center'>
                     <div className='text-center align-content-center align-items-center justify-content-center'>
                         <h2 className='advice-title'>Últimas ventas</h2>
@@ -23,7 +24,7 @@ const FlatCard = (props) => {
 
                     <div className='col text-center align-content-center align-items-center justify-content-center flat-card-image'>
 
-                        <p></p>
+                        <p><img className="foto-portada" src={flat.gallery[0]}/> </p>
 
                     </div>
                 </div>
@@ -54,12 +55,12 @@ const FlatCard = (props) => {
 
                     <div className='col extra-padding'>
 
-                        <br></br>
+                        {/* <br></br>
                         <h4 className="card-text">{flat.title}</h4>
                         <br></br>
                         <p className="card-text">{flat.description}</p>
 
-                        <br></br>
+                        <br></br> */}
                     <br></br>
                     <h4 className="card-text">{flat.title}</h4>
                     <br></br>

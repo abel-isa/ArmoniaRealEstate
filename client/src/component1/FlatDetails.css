@@ -53,3 +53,8 @@
     border: 1px solid #27ae61;
     border-radius: 10px
 }
+
+.todas-img {
+    width: 100%;
+    margin-bottom: 20px;
+}

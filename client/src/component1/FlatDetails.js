@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-
-import FlatService from '../services/seeFlats'
+import MapContainer from '../component1/MapContainer'
+import FlatService from '../services/seeFlatsNews'
 
 import './FlatDetails.css'
 
@@ -15,12 +15,13 @@ class FlatDetails extends Component {
         this.state = { flat: {} }
 
         this.service = new FlatService()
+
+        this.service.getOneFlat(this.props.match.params.id)
+            .then(response => this.setState({ flat: response }))
     }
 
     componentDidMount() {
         console.log(this.props)
-        this.service.getOneFlat(this.props.match.params.id)
-            .then(response => this.setState({ flat: response }))
     }
 
 
@@ -50,15 +51,10 @@ class FlatDetails extends Component {
 
                     <h3>Galería</h3>
 
-                    <figure>
-                        <img src="" alt="" />
-                        <p>imagen?</p>
-                    </figure>
-
-                    <figure>
-                        <img src="" alt="" />
-                        <p>imagen?</p>
-                    </figure>
+                    {this.state.flat.gallery ? this.state.flat.gallery.map((img, index) => {
+                        return (<img key={index} src={img} className="todas-img" />)
+                    }):null}
+                  
 
                     <article id='flat-article-1'>
 
@@ -109,6 +105,7 @@ class FlatDetails extends Component {
 
                     <h3>Localización</h3>
 
+                    <MapContainer location={{lat:40.404525,lng: -3.694394}} title={this.state.flat.title}/>
                 </section>
 
 
