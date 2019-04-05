@@ -12,7 +12,7 @@
 
 #welcome-header-h1 {
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: 3px;
@@ -22,7 +22,7 @@
 }
 
 #welcome-header-span {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 7px;
     font-size: 2rem;
     line-height: 1.2;

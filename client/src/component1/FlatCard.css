@@ -12,13 +12,25 @@
     /* padding-right: 3%; */
 }
 
-.flat-card-image{
-    background-image: url(./flatCardImg/madridColor.jpg);
+/* .flat-card-image{
+    background-image: url(../gallery/9-016/09.jpg);
     align-content: center;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     color: aliceblue;
-    height: 10rem;
+    height: 11rem;
+    margin: 20px 25px 0
+} */
+
+.foto-portada{
+    /* background-image: url(../gallery/9-016/09.jpg); */
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: aliceblue;
+    height: 11rem;
     margin: 20px 25px 0
 }
 

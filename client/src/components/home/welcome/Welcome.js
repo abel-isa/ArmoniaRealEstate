@@ -9,7 +9,7 @@ const Welcome = () => {
     return (
 
         <header className='welcome-header'>
-            <h1 id='welcome-header-h1'>Los mejores Inmuebles <br /> <span id='welcome-header-span'>[ en Madrid ]</span></h1>
+            <h1 id='welcome-header-h1'>ARMONIA<br /> <span id='welcome-header-span'>[ real estate ]</span></h1>
         </header>
 
     )

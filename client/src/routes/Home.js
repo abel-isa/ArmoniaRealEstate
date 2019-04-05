@@ -7,6 +7,8 @@ import seeFlats from '../services/seeFlatsNews'
 import Advice from '../components/home/advice/Advice'
 import Footer from '../components/footer/Footer'
 
+import {Link} from 'react-router-dom'
+import './home.css'
 
 
 class Home extends Component {
@@ -32,6 +34,12 @@ class Home extends Component {
         <HelpForm2 />
 
         <Advice />
+
+        <div >
+                    <Link className="flat-type3" to={"/buy"}>Ver todas las viviendas</Link>
+                    </div>
+                    <br></br>
+                    <br></br>
 
         {Array.isArray(this.state.pisos) ? this.state.pisos.map((piso, index) => <FlatCard key={index} flat={piso} />) : null}
 

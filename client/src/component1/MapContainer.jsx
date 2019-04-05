@@ -30,19 +30,25 @@ export class MapContainer extends Component {
   };
 
   render() {
+    console.log("entra")
     const style = {
-      width: '75%',
-      height: '75%'
+     
+      width: '85%',
+      height: '75%',
+      marginLeft: '10px'
     }
+    
+    const {location, title} = this.props;
+    
     return (<div>
        
       <Map google={this.props.google} initialCenter={{
-        lat: 40.4401068,
-        lng: -3.701612
+        lat: location ? location.lat : 40.4401068 ,
+        lng: location ? location.lng : -3.701612 
       }} zoom={14} style={style} onClick={this.onMapClicked}> 
 
         <Marker onClick={this.onMarkerClick}
-                name={'Tu cosa'} />
+                name={title || 'Tu cosa'} />
 
         <InfoWindow onClose={this.onInfoWindowClose} marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}>

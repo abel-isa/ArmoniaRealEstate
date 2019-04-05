@@ -71,7 +71,7 @@ class HelpForm2 extends Component {
 
                     <form className="form" id="form1" onSubmit={this.handleSubmit}>
 
-                        <h3 className="form-tittle">Escribe tu consulta a un <a href="#Asesor">Asesor Especializado</a></h3>
+                        <h3 className="form-tittle">Escribe tu consulta a un <a href="mailto:info@armoniarealestate.com">Asesor Especializado</a></h3>
 
                         <p className="name">
                             <input name="name" type="text" className="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Nombre" id="name" value={this.state.helpForm2.name} onChange={e => this.handleChangeState(e)} />

@@ -136,7 +136,7 @@ class App extends Component {
         {!document.cookie ? 
           <div id="privacidad">
           Las cookies nos ayudan a ofrecer nuestros servicios. Al utilizar nuestros servicios, acepta nuestro uso de cookies.
-          <a  target="_blank" href="politicaDePrivacidad">Más información</a>
+          <a  target="_blank" href="privacy-policy">Más información</a>
           <button onClick={this.setCookie}>Aceptar</button>
           </div>: null
         }

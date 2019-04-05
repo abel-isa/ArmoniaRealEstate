@@ -23,7 +23,7 @@ class HelpForm extends Component {
 
             <form>
 
-                <h3>Escribe tu consulta a un <a href="#Asesor">Asesor Especializado</a></h3>
+                <h3>Escribe tu consulta a un <a href="mailto:info@armoniarealestate.com">Asesor Especializado</a></h3>
 
                 <Form action='javascripts:;'>
 

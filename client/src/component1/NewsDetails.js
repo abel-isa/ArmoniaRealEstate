@@ -25,20 +25,13 @@ class NewsDetails extends Component {
 
     render() {
         return (
-        <div id="breaking-news-container">
-            <div id="breaking-news-colour" class="slideup animated">
-              
-            </div>  
-              {/* <span class="breaking-news-title delay-animated slidein">
-                // NOTICIAS //
-              </span> 
-              <a class="breaking-news-headline delay-animated2 fadein marquee">
-                Encuentra las últimas novedades sobre viviendas en Madrid
-              </a>    */}
+        <div id="flat-details-div">
 
-                <header className='welcome-news-header'>
-                
-                </header>
+          <header className="sales-header">
+          <h1 id="flat-header-h2">{this.state.news.title}</h1>
+
+          </header>
+            
                
                
 
