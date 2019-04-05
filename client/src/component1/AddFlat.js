@@ -150,23 +150,23 @@ export class AddFlat extends Component {
 
                             <legend className="flat-form-legend">Descrición de la vivienda:</legend>
                             <p>
-                                <label>Distrito</label>
-                                <input className="flat-feedback-input" type="text" name="distrit" value={this.state.flat.distrit} onChange={e => this.handleChangeState(e)} placeholder="distrito" />
+                                {/* <label>Distrito</label> */}
+                                <input className="flat-feedback-input" type="text" name="Distrit" value={this.state.flat.distrit} onChange={e => this.handleChangeState(e)} placeholder="Distrito" />
                             </p> 
 
                             <p>
-                                <label>Barrio</label>
-                                <input className="flat-feedback-input" type="text" name="neighbourhood" value={this.state.flat.neighbourhood} onChange={e => this.handleChangeState(e)} placeholder="barrio" />
+                                {/* <label>Barrio</label> */}
+                                <input className="flat-feedback-input" type="text" name="neighbourhood" value={this.state.flat.neighbourhood} onChange={e => this.handleChangeState(e)} placeholder="Barrio" />
                             </p>
 
                             <p>
-                                <label>Título</label>
+                                {/* <label>Título</label> */}
                                 <input className="flat-feedback-input" type="text" name="title" value={this.state.flat.title} onChange={e => this.handleChangeState(e)} placeholder="Título del anuncio" />
                             </p>
 
 
                             <p>
-                                <label>Descripción</label>
+                                {/* <label>Descripción</label> */}
                                 <textarea className="flat-feedback-input" type="text" name="description" value={this.state.flat.description} onChange={(event) => this.handleChangeState(event)} placeholder="Descripción del anuncio" />
                             </p>
 

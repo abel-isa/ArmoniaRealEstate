@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
-import FlatService from '../services/seeFlats'
+import FlatService from '../services/seeFlatsNews'
 
 import './FlatDetails.css'
 

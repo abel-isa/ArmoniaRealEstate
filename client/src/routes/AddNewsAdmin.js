@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import AddNews from '../component1/AddNews'
+import Footer from '../components/footer/Footer'
+
 
 class AddNewsAdmin extends Component {
 
@@ -11,6 +13,9 @@ class AddNewsAdmin extends Component {
                
             
         <AddNews logout={this.props.logout}/>
+
+        <Footer/>
+
   
         </div>
   

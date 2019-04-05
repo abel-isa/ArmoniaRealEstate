@@ -5,6 +5,7 @@ import HelpForm2 from '../components/helpForm2/HelpForm2'
 import FlatCard from '../component1/FlatCard'
 import seeFlats from '../services/seeFlatsNews'
 import Advice from '../components/home/advice/Advice'
+import Footer from '../components/footer/Footer'
 
 
 
@@ -33,6 +34,8 @@ class Home extends Component {
         <Advice />
 
         {Array.isArray(this.state.pisos) ? this.state.pisos.map((piso, index) => <FlatCard key={index} flat={piso} />) : null}
+
+        <Footer/>
 
       </div>
 

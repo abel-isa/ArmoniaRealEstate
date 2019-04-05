@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+import Footer from '../components/footer/Footer'
+
+
 import './PrivacyPolicy.css'
 
 
@@ -10,6 +13,8 @@ class PrivacyPolicy extends Component {
 
     return (
 
+      <div>
+      
       <section className='policy-privacy-sec'>
 
           <h2 id='policy-privacy-h2'>
@@ -305,7 +310,14 @@ class PrivacyPolicy extends Component {
           Jaime Hidalgo Ramirez se reserva el derecho a modificar su Política de Privacidad y de Cookies, de acuerdo a su propio criterio, o motivado por un cambio legislativo, jurisprudencial o doctrinal de la Agencia Española de Protección de Datos. Los cambios o actualizaciones de esta Política de Privacidad y de Cookies serán notificados de forma explícita al Usuario. Esta Política de Privacidad y de Cookies fue actualizada el día 29 de enero 2019 para adaptarse al Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD) y a la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.
           </p>
 
+          
+
       </section>
+
+      <Footer/>
+
+      </div>
+
 
     )
 
